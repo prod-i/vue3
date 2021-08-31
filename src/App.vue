@@ -17,7 +17,7 @@
         </div>
 
         <post-list 
-            :posts='posts'
+            :posts='sortedPost'
             @remove='removePost'
             v-if="!isNPCLoading"
         />
@@ -44,6 +44,7 @@ import PostList from './components/PostList.vue';
 import MyButton from './components/UI/MyButton.vue';
 import MySelect from './components/UI/MySelect.vue';
 import axios from 'axios';
+import { watch } from '@vue/runtime-core';
 
 export default {
     components: {
@@ -85,7 +86,21 @@ export default {
     },
     mounted(){
             this.fetchNPC();
-    }
+    },
+    computed: {
+        sortedPost(){
+            return [...this.posts].sort((post1,post2)=>{
+                return post1[this.selectedSort]?.localeCompare(post2[this.selectedSort])
+            })
+        }
+    },
+    // watch: {
+    //     selectedSort(newValue){
+    //         this.posts.sort((post1,post2)=>{
+    //             return post1[newValue]?.localeCompare(post2[newValue])
+    //         })
+    //     }
+    // },
 }
 </script>
 
@@ -107,7 +122,7 @@ body{
     margin: 0 auto;
 }
 .modal_btn{
-    width: 30%;
+    width: 20%;
 }
 .app-options{
     margin-top: 20px;
