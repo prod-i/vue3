@@ -1,6 +1,6 @@
 <template>
     <select class="select" v-model="modelValue" @change="changeOption">
-        <option disabled value="">Выберете из списка</option>
+        <option disabled value="">{{defValue}}</option>
         <option
             v-for="option in options" :key="option.value"
             :value="option.value"
@@ -12,6 +12,7 @@
 export default {
     name: 'my-select',
     props: {
+        defValue: [String],
         modelValue:{
             type: String,
         },
@@ -30,7 +31,7 @@ export default {
 
 <style scoped>
 .select{
-    padding: 10px 20px;
+    padding: 10px 20px 10px 10px;
     background-color: #3f294db6;
     border: 0;
 }

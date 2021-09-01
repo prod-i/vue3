@@ -2,10 +2,11 @@
     <form @submit.prevent>
         <h2>Добавить NPC</h2>
 
-        <my-input type="text" placeholder="Имя"
+        <my-input class="in" type="text" placeholder="Имя"
+            v-focus
             v-model="post.first_name"
         />
-        <my-input type="text" placeholder="Фамилия"
+        <my-input class="in" type="text" placeholder="Фамилия"
             v-model="post.last_name"
         />
 
@@ -48,7 +49,13 @@ form{
     display: flex;
     flex-direction: column;
 }
+h2{
+    margin-bottom: 20px;
+}
 .btn{
-    margin: 15px 0;
+    margin: 20px 0;
+}
+.in{
+    background-color: #3f294db6;
 }
 </style>

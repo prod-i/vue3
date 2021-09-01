@@ -7,19 +7,11 @@
 </template>
 
 <script>
+import toggleMixin from '@/mixins/toggleMixin'
 export default {
+
     name: 'my-modal',
-    props:{
-        show:{
-            type: Boolean,
-            default: false,
-        },
-    },
-    methods: {
-        higeModal(){
-            this.$emit('update:show', false);
-        },
-    },
+    mixins: [toggleMixin],
 }
 </script>
 
@@ -35,7 +27,7 @@ export default {
 }
 .modal-body{
     margin: auto;
-    background-color: #af4646;
+    background-color: #836795b6;
     border-radius: 7px;
     flex-basis: 25%;
     min-height: 50px;

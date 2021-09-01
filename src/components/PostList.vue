@@ -1,13 +1,18 @@
 <template> 
-    <ul class="posts" v-if='posts.length > 0'>
+    <ul class="posts">
         <h2>Список NPC</h2>
-        <post-item 
-            v-for="post in posts" :key='post.id'
-            :post='post'
-            @remove='$emit("remove", post)'
-        />
+
+        <transition-group name='npc-list' v-show='posts.length > 0'>
+            <post-item 
+                v-for="post in posts" :key='post.id'
+                :post='post'
+                @remove='$emit("remove", post)'
+            />
+        </transition-group>
+
+        <div class="notFound" v-show='posts.length <= 0'>Посты ненайдены</div>
+
     </ul>    
-    <div class="notFound" v-else-if='posts.length <= 0'>Посты ненайдены</div>
 </template>
 
 <script>
@@ -36,5 +41,20 @@ export default {
     .notFound{
         color:#ffbbbb;
         margin-top: 30px;
+    }
+
+    .npc-list-item {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .npc-list-enter-active, .npc-list-leave-active {
+        transition: all .3s;
+    }
+    .npc-list-enter-from, .npc-list-leave-to {
+        opacity: 0;
+        transform: translateX(130px);
+    }
+    .npc-list-move {
+        transition: transform .3s;
     }
 </style>

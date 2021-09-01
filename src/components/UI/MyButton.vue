@@ -19,6 +19,9 @@ export default {
     color: rgb(222, 233, 122);
     border: none;
     transition: .2s;
+    /* font-weight: 300; */
+    letter-spacing: 2px;
+
 }
 .btn:hover{
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);

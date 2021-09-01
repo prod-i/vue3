@@ -5,7 +5,10 @@
             <div><b>Фамилия:</b> {{post.last_name}}</div>
         </div>
         <div class="post-options">
-            <my-button
+            <my-button class='btn'
+                @click="$router.push(`/npc/${post.id}`)"
+            >Открыть</my-button>
+            <my-button class='btn'
                 @click='$emit("remove", post)'
             >Удалить</my-button>
         </div>
@@ -27,8 +30,8 @@ export default {
 <style scoped>
     .post{
         display: flex;
-        margin: 20px 0;
-        padding: 15px;
+        margin: 30px 0;
+        padding: 20px 15px;
         list-style-type: none;
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
         align-items: center;
@@ -38,5 +41,8 @@ export default {
     }
     .post-options{
         font-size: 10px;
+    }
+    .btn{
+        margin-left: 5px;
     }
 </style>
