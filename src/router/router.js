@@ -1,5 +1,7 @@
 import About from '@/pages/About'
 import NpcPage from '@/pages/NpcPage'
+import NpcPageWithStore from '@/pages/NpcPageWithStore'
+import NpcPageCompositionApi from '@/pages/NpcPageCompositionApi'
 import NpcItem from '@/pages/NpcItem'
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -15,6 +17,14 @@ const routes = [
     {
         path: '/npc/:id',
         component: NpcItem
+    },
+    {
+        path: '/store',
+        component: NpcPageWithStore
+    },
+    {
+        path: '/composition',
+        component: NpcPageCompositionApi
     },
 ]
 

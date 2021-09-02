@@ -1,7 +1,6 @@
 <template>
     <div class="npv-item">
-        <h1>NPC - </h1>
-        <h4>ID - {{$route.params.id}}</h4>
+        <h1>ID - {{$route.params.id}}</h1>
     </div>
 </template>
 

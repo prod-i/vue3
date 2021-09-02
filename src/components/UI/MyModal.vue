@@ -1,5 +1,5 @@
 <template>
-    <div class="modal" v-if="show" @click.stop='higeModal'>
+    <div class="modal" v-if="show" @click='higeModal'>
         <div @click.stop class="modal-body">
             <slot />
         </div>
@@ -8,8 +8,8 @@
 
 <script>
 import toggleMixin from '@/mixins/toggleMixin'
-export default {
 
+export default {
     name: 'my-modal',
     mixins: [toggleMixin],
 }

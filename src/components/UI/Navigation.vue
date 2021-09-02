@@ -2,6 +2,8 @@
     <div class="nav">
         <div class="nav_wrap">
             <my-button @click="$router.push('/')" class="nav-btn">NPC</my-button>
+            <my-button @click="$router.push('/store')"  class="nav-btn">Store</my-button>
+            <my-button @click="$router.push('/composition')"  class="nav-btn">composition API</my-button>
             <my-button @click="$router.push('/about')"  class="nav-btn">About</my-button>
         </div>
     </div>
@@ -27,7 +29,7 @@ export default {
     height: 100%;
 }
 .nav-btn{
-    width: 100px;
+    width: fit-content;
     height: 100%;
     margin-right: 5px;
     background-color: #3f294db6;

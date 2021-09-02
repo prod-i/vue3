@@ -2,7 +2,7 @@
     <ul class="posts">
         <h2>Список NPC</h2>
 
-        <transition-group name='npc-list' v-show='posts.length > 0'>
+        <transition-group name='npc-list' v-if='posts.length > 0'>
             <post-item 
                 v-for="post in posts" :key='post.id'
                 :post='post'
@@ -10,7 +10,7 @@
             />
         </transition-group>
 
-        <div class="notFound" v-show='posts.length <= 0'>Посты ненайдены</div>
+        <div class="notFound" v-else-if='posts.length <= 0'>Посты ненайдены</div>
 
     </ul>    
 </template>
